@@ -1,0 +1,44 @@
+body {
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 1fr 4fr;
+    height: 100%;
+}
+
+.header {
+    grid-area: 1 / 2;
+    background-color: aquamarine;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.sidebar {
+    grid-area: span 2 / 1;
+    background-color: wheat;
+}
+
+.main {
+    grid-area: 2 / 2;
+    background-color: rgb(153, 153, 153);
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.my-projects {
+    grid-area: span 2 / 1;
+}
+
+.projects {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr)
+}
