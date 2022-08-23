@@ -37,20 +37,23 @@ body {
     display: grid;
     grid-template-columns: 3fr 1fr;
     grid-template-rows: 1fr 1fr;
-    box-shadow: inset 0px 2px 3px 1px #bae6fd;
+    box-shadow: inset 0px 2px 3px 1px lightslategrey;
     padding: 15px;
-}
-
-.my-projects {
-    grid-area: span 2 / 1;
-    height: 100%;
+    gap: 15px;
 }
 
 .projects {
+    grid-area: span 2 / 1;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: fit-content(100%) 1fr 1fr 1fr;
     gap: 15px;
+}
+
+.projects-title {
+    grid-area: 1 / span 2;
+    font-weight: bold;
+    text-shadow: 2px 2px 2px grey;
 }
 
 .logo {
@@ -93,7 +96,7 @@ body {
 }
 
 div.search {
-    margin: 10px;
+    margin: 0px 10px;
     display: grid;
     justify-items: stretch;
     align-items: center;
@@ -129,7 +132,7 @@ div.search {
 .user-info {
     display: grid;
     grid-template-columns: 80px 1fr;
-    margin: 10px;
+    margin: 0px 10px;
     justify-items: start;
     align-items: center;
 }
@@ -148,9 +151,11 @@ div.search {
 
 .user-name {
     display: grid;
-    grid-template-columns: 1fr 4fr;
-    grid-template-rows: fit-content 1fr;
+    grid-template-columns: fit-content(100%) 4fr;
+    grid-template-rows: 1fr 1fr;
     padding-bottom: 15px;
+    margin: 0px 10px;
+    column-gap: 15px;
 }
 
 .user-logo {
@@ -164,7 +169,7 @@ div.search {
     align-self: end;
 }
 
-h2 {
+h2, h4 {
     margin-top: 0;
 }
 
@@ -173,7 +178,7 @@ h2 {
     grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
     gap: 10px;
-    margin: 10px;
+    margin: 0px 10px;
 }
 
 .user-actions button {
@@ -184,4 +189,47 @@ h2 {
     color: white;
     font-weight: bold;
     cursor: pointer;
+}
+
+.user-actions button:hover {
+    border: 2px solid black;
+}
+
+.cards {
+    background-color: #f0f9ff;
+    border-left: 8px solid black;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 2px 2px 2px 2px lightgrey;
+}
+
+.cards:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.announcements, .trending {
+    display: grid;
+    grid-template-rows: fit-content(100%) 1fr;
+    gap: 15px;
+}
+
+.announcements-title, .trending-title {
+    font-weight: bold;
+    text-shadow: 2px 2px 2px grey;
+}
+
+.announcements-card, .trending-card {
+    background-color: #f0f9ff;
+    /*border-left: 8px solid black;*/
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 2px 2px 2px 2px lightgrey;
+}
+
+.trending-card a,
+.projects a {
+    text-decoration: none;
+    color: black;
 }
